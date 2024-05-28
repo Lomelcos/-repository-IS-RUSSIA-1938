@@ -1,0 +1,93 @@
+
+
+
+
+/* стили карты */
+
+/* весь контейнер, сохраняет перспективу */
+.flip-container {
+    perspective: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.flip-container, .front, .back {
+    width: 620px;
+    height: 330px;
+}
+
+/* здесь идет скорость переворота */
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    position: relative;
+}
+
+/* скрыть заднюю часть панели во время замены */
+.front, .back {
+    backface-visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* передняя панель, расположенная над спинкой */
+.front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+    background-image: url(card_front.jpg);
+    background-size: cover;
+}
+
+/* назад, изначально скрытая панель */
+.back {
+    transform: rotateY(180deg);
+    background-image: url(card_back.jpg);
+    background-size: cover;
+}
+
+.flip-container:hover .flipper, .flip-container.hover .flipper, .flip-container.flip .flipper 
+{
+    transform: rotateY(180deg);
+}
+
+
+
+
+.card_front_content{
+    margin: 230px 0px 0px 80px;
+    font-size: 1.5em;
+}
+
+.cvv{
+    margin: 136px 0px 0px 400px;
+}
+
+
+
+
+
+
+
+
+/* стили формы */
+
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .form-container input[type="text"], .form-container input[type="number"], .form-container select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }

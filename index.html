@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="tumba.js"></script>
+</head>
+<body>
+
+    <div class="flip-container" ontouchstart="this.classList.toggle('hover');" id="gf">
+        <div class="flipper" id="flipper">
+            <div class="front">
+                    <div class="card_front_content">
+                        <div class="card-number" id="card-number">**** **** **** ****</div>
+                        <div class="card-holder" id="card-holder">Имя Фамилия</div>
+                        <div class="date"        id="date">MM/YY</div>
+                    </div>
+            </div>
+            <div class="back">
+                    <div class="cvv" id="cvv">CVV</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <h2>Заполните данные банковской карты</h2>
+        <form id="payment-form">
+          <label for="card-number">Номер карты:</label>
+          <input type="text" id="card-number-input" name="card-number" maxlength="16" placeholder="Введите номер карты" required>
+    
+          <label for="card-holder">Владелец карты:</label>
+          <input type="text" id="card-holder-input" name="card-holder" maxlength="40" placeholder="Введите имя владельца карты" required>
+    
+          <label for="date">Срок действия:</label>
+          <input type="text" id="date-input" name="date" maxlength="4" placeholder="MM/ГГ" required>
+    
+          <label for="cvv">CVV-код:</label>
+          <input type="number" id="cvv-input" name="cvv" maxlength="3" placeholder="Введите CVV-код" required>
+    
+          <input type="submit" value="Заполнить">
+        </form>
+    </div>
+
+
+</body>
+</html>
